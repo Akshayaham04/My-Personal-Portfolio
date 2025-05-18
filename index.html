@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: rgb(243, 243, 247);
+        color: black;
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  background-color: rgb(9, 24, 33);
+  flex-wrap: wrap;
+  position: fixed; /* Makes the navbar stick to the top */
+  top: 0; /* Positions it at the very top */
+  width: 100%; /* Ensures it spans the full width */
+  z-index: 1000; /* Keeps it above other content */
+}
+body {
+  background-color: rgb(243, 243, 247);
+  color: black;
+  font-family: "Poppins", sans-serif;
+  padding-top: 70px; /* Matches the height of the navbar */
+}
+html {
+  scroll-behavior: smooth;
+}
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+        display: inline-block;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        position: relative;
+      }
+      nav ul li a::after{
+        content: '';
+        width: 0%;
+        height: 3px;
+        background: blueviolet;
+        position: absolute;
+        transition: 0.5s;
+        left: 0;
+        bottom: -6px;
+
+      }
+      nav ul li a:hover::after {
+        text-decoration: none;
+        color: white;
+        font-size: 1.08rem;
+        width: 100%;
+
+      }
+      
+      main hr {
+        border: 0;
+        background: blueviolet;
+        height: 1.2px;
+        margin: 51px 84px;
+      }
+      .left {
+        font-size: 3rem;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        color: white;
+        transform: 0.2 ease;
+      }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 90px 0;
+      }
+
+      .firstSection > div {
+        width: 30%;
+      }
+      .leftSection {
+        font-size: 2rem;
+      }
+      .leftSection .btn1 {
+        padding: 12px;
+        background-color: rgb(85, 87, 218);
+        color: white;
+        border: 1px solid white;
+        border-radius: 6px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .leftSection .btn2 {
+        padding: 12px;
+        background-color: white;
+        color: rgb(85, 87, 218);
+        border: 1px solid rgb(85, 87, 218);
+        border-radius: 6px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .leftSection .btn2:hover {
+        padding: 12px;
+        background-color: rgb(85, 87, 218);
+        color: white;
+        border: 1px solid white;
+        border-radius: 6px;
+        font-size: 20px;
+        cursor: pointer;
+        font-size: 1.08rem;
+      }
+
+      .rightSection img {
+        width: 80%;
+      }
+      .purple {
+        color: blueviolet;
+      }
+      #element {
+        color: blueviolet;
+      }
+      .secSection {
+        max-width: 80vw;
+        margin: auto;
+        height: 90vh;
+      }
+      .text-gray {
+        color: rgb(88, 87, 89);
+      }
+      .social-icons {
+  margin-left: 15px !important;
+}
+
+.social-icons a {
+  font-size: 1.5rem !important;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: blueviolet !important;
+  transform: scale(1.1);
+}
+      .secSection h1 {
+        font-size: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px; /* space between left and right divs */
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+
+      .boxLeft,
+      .boxRight {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+      }
+      .boxLeft {
+        margin-left: 0%;
+        width: 30%;
+      }
+
+      .boxLeft ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .boxLeft li {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #222;
+      }
+
+      .boxRight p {
+        font-size: 15px;
+        color: #333333;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .boxLeft,
+        .boxRight {
+          width: 90%;
+        }
+      }
+      .boxLeft li b {
+        color: blueviolet;
+      }
+      .thirdSection h1 {
+        text-align: center;
+        font-size: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .thirdSection {
+        max-width: 100vw;
+        margin: auto;
+        height: 80vh;
+        color: white;
+        background-color: rgb(9, 24, 33);
+      }
+      .thirdSection .box2 {
+        background-color: white;
+        width: 80vw;
+        height: 2px;
+        margin: 56px 135px;
+        display: flex;
+      }
+      .thirdSection .vertical {
+        height: 93px;
+        width: 2px;
+        background-color: white;
+        margin: 0 204px;
+      }
+      .img-top {
+        width: 68px;
+        position: relative;
+        top: -38px;
+        left: -32px;
+      }
+      .vertical-title {
+        position: relative;
+        top: 30px;
+        width: 269px;
+        font-size: 22px;
+        left: -100px;
+      }
+      .vertical-desc {
+        position: relative;
+        top: 50px;
+        width: 250px;
+        color: wheat;
+        font-size: 18px;
+        left: -72px;
+      }
+      /*.Projects{
+        height: 40vw;
+      }
+      .Projects h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.Projects .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}*/
+.Projects {
+  padding: 60px 0;
+}
+
+.Projects h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.Projects .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.work:nth-child(n+4) {
+  grid-column: span 1;
+}
+
+.work:nth-child(4),
+.work:nth-child(5) {
+  grid-column: span 1;
+  justify-self: center; /* centers the 2 cards in the second row */
+}
+
+.work img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  display: block;
+  height: 180px;
+  object-fit: cover;
+}
+
+.layer {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.layer h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.layer p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.layer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+      .Skills h1 {
+        font-size: 2rem;
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns in the first row */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.skill-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.contact-section p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.contact-card {
+  max-width: 300px;
+  text-align: center;
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.contact-card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+  .contact-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  padding: 20px 0;
+  background-color: black;
+  margin-top: 120px;
+    margin-bottom: -600px;
+    height: 150px;
+}
+    </style>
+  </head>
+  <body>
+    <!--<header>
+      <nav>
+        <div class="left">Akshaya</div>
+        <div class="right">
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/">ABOUT</a></li>
+            <li><a href="/">EDUCATION</a></li>
+            <li><a href="/">PROJECTS</a></li>
+            <li><a href="/">SKILLS</a></li>
+            <li><a href="/">CONTACT ME</a></li>
+            <li class="social-icons">
+              <a href="https://github.com/Akshayaham04" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+            <li class="social-icons">
+              <a href="https://linkedin.com/in/hammikolla-akshaya" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>-->
+    <header>
+      <nav>
+        <div class="left">Akshaya</div>
+        <div class="right">
+          <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#contact">CONTACT ME</a></li>
+            <li class="social-icons">
+              <a href="https://github.com/Akshayaham04" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+            <li class="social-icons">
+              <a href="https://linkedin.com/in/hammikolla-akshaya" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="firstSection" id="home">
+        <div class="leftSection">
+          Hi, I'm <span class="purple">Hammikolla Akshaya</span>
+          <div>Iam a passionate</div>
+          <span id="element"></span>
+          <div class="buttons">
+            <button class="btn1">Email Me</button>
+            <button class="btn2">Download Resume</button>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="Photo.png" alt="Not available" />
+        </div>
+      </section>
+      <hr />
+      <section class="secSection" id="about">
+        <h1>About Me</h1>
+        <span class="text-gray">My personal details and acheivements</span>
+        <div class="container">
+          <div class="boxLeft">
+            <ul>
+              <li><b>Email</b>:hammikaakshaya04@gmail.com</li>
+              <li><b>Degree</b>:B.Tech in Computer Science</li>
+              <li><b>Location</b>:Hyderabad</li>
+            </ul>
+          </div>
+          <div class="boxRight">
+            <p>
+              I aim to become a successful expert in the field of Software
+              Engineering by channelizing my technical knowledge and skills to
+              ensure personal and professional growth and to contribute to the
+              prosperity of the organization. Through continuous learning and
+              collaboration, I strive to distinguish myself from others.
+            </p>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="thirdSection" id="education">
+        <h1>Education</h1>
+        <div class="box2">
+          <div class="vertical">
+            <img class="img-top" src="School.jpg" alt="" />
+            <div class="vertical-title">Sri Chaitanya Techno School (2019)</div>
+            <div class="vertical-desc">
+              Secondary School
+              <div>Grade :<b> 10 </b></div>
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="img-top" src="Inter.jpeg" alt="" />
+            <div class="vertical-title">
+              Sri Chaitanya Junior Kalasala (2019-2021)
+            </div>
+            <div class="vertical-desc">
+              Intermediate :<b> MPC </b>
+              <div>Percentage :<b> 97.6% </b></div>
+            </div>
+          </div>
+          <div class="vertical">
+            <img class="img-top" src="Grad.jpeg" alt="" />
+            <div class="vertical-title">
+              Vardhaman College of Engineering (2021-2025)
+            </div>
+            <div class="vertical-desc">
+              BTech :<b> Computer Science </b>
+              <div>CGPA :<b> 9.05 </b></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section class="Projects" id="projects">
+        <h1>My Projects</h1>
+        <div class="container">
+          <div class="work-list">
+            <!-- Project 1 -->
+            <div class="work">
+              <img src="proj1.png" alt="Project 1 Image" />
+              <div class="layer">
+                <h3>CNN-Driven Classification of ATFL in T2 Axial </h3>
+                <p>Developed a model using CNN to classify normal and abnormal conditions of Anterior Talofibular Ligament in T2 axial 
+                  MRI Scans using real time patient data with 94% accuracy.</p>
+                <p><strong>Techstack:</strong>  Python, Scikit‐Learn, CNN models, TensorFlow, OpenCV <br></p>
+              <!--<a href="#"><i class="fab fa-github"></i> GitHub</a> -->
+              </div>
+            </div>
+      
+            <!-- Project 2 -->
+            <div class="work">
+              <img src="proj2.jpg" alt="Project 2 Image" />
+              <div class="layer">
+                <h3>DDoS Detection and Mitigation in Cloud Environments</h3>
+                <p>Developed a deep learning model to detect DDoS attacks and mitigation mechanishms in cloud.Attained an accuracy of 94%. </p>
+                <p><strong>Techstack:</strong> Deep learning,LSTM,GRU,CNN,AWS,Flask API<br></p>
+                <!--<a href="#"><i class="fab fa-github"></i> GitHub</a> -->
+              </div>
+            </div>
+      
+            <!-- Project 3 -->
+            <div class="work">
+              <img src="proj3.jpeg" alt="Project 3 Image" />
+              <div class="layer">
+                <h3>Quote Generator </h3>
+                <p>Developed an intuitive web‐based platform for generating random quotes by integrated a Quote Generation API 
+                  consisting of 1000+ quotations to provide quotes based on individual preferences.</p>
+                <p><strong>Techstack:</strong>  HTML, CSS, JavaScript, Quote Generation API  <br></p>
+               <!--<a href="#"><i class="fab fa-github"></i> GitHub</a> -->
+              </div>
+            </div>
+      
+            <!-- Project 4 -->
+            <div class="work">
+              <img src="proj4.jpeg" alt="Project 4 Image" />
+              <div class="layer">
+                <h3>Inventory Demand Forecasting </h3>
+                <p>Developed predictive model to analyze stock levels for various products across multiple stores. The model features 
+                  sales prediction and stock data analysis to deliver accurate forecasting</p>
+                <p><strong>Techstack:</strong>  Python, Scikit‐Learn, XG‐Boost, ARIMA <br></p>
+               <!--<a href="#"><i class="fab fa-github"></i> GitHub</a> -->
+              </div>
+            </div>
+      
+            <!-- Project 5 -->
+            <div class="work">
+              <img src="proj5.jpg" alt="Project 4 Image" />
+              <div class="layer">
+                <h3>My Portfolio Website </h3>
+                <p>Personal portfolio to showcase projects, skills, and resume in a responsive layout.To know more about myself.</p>
+                <p><strong>Techstack:</strong>  Html,CSS,Java Script,React <br></p>
+               <!--<a href="#"><i class="fab fa-github"></i> GitHub</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>      
+      <hr />
+      <section class="Skills" id="skills">
+        <h1>My Skills</h1>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java">
+            <p>Java</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="HTML">
+            <p>HTML</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="CSS">
+            <p>CSS</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
+            <p>JavaScript</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React.js">
+            <p>React.js</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/528/528260.png" alt="MySQL">
+            <p>MySQL</p>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/9211/9211124.png" alt="DSA">
+            <p>DSA</p>
+          </div>
+          <div class="skill-card">
+            <img src="Python.jpeg" alt="Python">
+            <p>Python</p>
+          </div>
+        </div>        
+      </section>
+      <section class="contact-section" id="contact">
+        <h1>Contact Me</h1>
+        <p>I'm currently looking for Software Job opportunities!<br>
+          If you are intrested in my profile or have any queries.<br>
+          Please feel free to contact me.
+        </p>
+      
+        <div class="contact-container">
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>Drop a mail to.</p>
+            <a href="mailto:hammikaakshaya04@gmail.com">hammikaakshaya04@gmail.com</a>
+          </div>
+      
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Hyderabad, India</p>
+          </div>
+        </div>
+      
+        <footer class="contact-footer">
+          <p>©2025 Akshaya.</p>
+        </footer>
+      </section>      
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["CSE Graduate.", "Front-end Developer.", "Learner."],
+        typeSpeed: 50,
+      });
+    </script>
+  </body>
+</html>
