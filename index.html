@@ -120,6 +120,8 @@ html {
         border-radius: 6px;
         font-size: 20px;
         cursor: pointer;
+         display: inline-block; /* Add this */
+  text-decoration: none;
       }
       .leftSection .btn2:hover {
         padding: 12px;
@@ -267,39 +269,7 @@ html {
         font-size: 18px;
         left: -72px;
       }
-      /*.Projects{
-        height: 40vw;
-      }
-      .Projects h1 {
-  text-align: center;
-  font-size: 2rem;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-
-.Projects .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.work-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.work {
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.work img {
-  width: 100%;
-  border-radius: 10px;
-  display: block;
-}*/
+      
 .Projects {
   padding: 60px 0;
 }
@@ -476,30 +446,82 @@ html {
     margin-bottom: -600px;
     height: 150px;
 }
+/* Compact Certifications Card */
+.single-certification-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 80vw;
+  margin: 30px auto 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.single-certification-card h3 {
+  color: blueviolet;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.single-certification-card h3 i {
+  font-size: 1.5rem;
+}
+
+.certification-list {
+  list-style-type: none;
+}
+
+.certification-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.certification-list li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .single-certification-card {
+    max-width: 90vw;
+    padding: 15px;
+  }
+}
+/* Quote Container Styles */
+.quote-container {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  text-align: center;
+  transition: opacity 0.5s ease;
+}
+
+#quote-text {
+  font-style: italic;
+  color: #333;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+#quote-author {
+  color: blueviolet;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.fade-out {
+  opacity: 0.5;
+}
     </style>
   </head>
   <body>
-    <!--<header>
-      <nav>
-        <div class="left">Akshaya</div>
-        <div class="right">
-          <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="/">ABOUT</a></li>
-            <li><a href="/">EDUCATION</a></li>
-            <li><a href="/">PROJECTS</a></li>
-            <li><a href="/">SKILLS</a></li>
-            <li><a href="/">CONTACT ME</a></li>
-            <li class="social-icons">
-              <a href="https://github.com/Akshayaham04" target="_blank"><i class="fab fa-github"></i></a>
-            </li>
-            <li class="social-icons">
-              <a href="https://linkedin.com/in/hammikolla-akshaya" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>-->
     <header>
       <nav>
         <div class="left">Akshaya</div>
@@ -528,37 +550,54 @@ html {
           <div>Iam a passionate</div>
           <span id="element"></span>
           <div class="buttons">
-            <button class="btn1">Email Me</button>
-            <button class="btn2">Download Resume</button>
+            <button class="btn1" onclick="location.href='#contact'">Email Me</button>
+            <a class="btn2" href="https://drive.google.com/uc?export=download&id=1xzaG-YNXCFJjkkC_kudDuj-TFbdcQhWo" download="Akshaya_Resume.pdf">Download Resume</a>
           </div>
         </div>
         <div class="rightSection">
           <img src="Photo.png" alt="Not available" />
+          <div class="quote-container">
+         <p id="quote-text">"Loading quote..."</p>
+         <p id="quote-author"></p>
+         </div>
         </div>
       </section>
       <hr />
       <section class="secSection" id="about">
-        <h1>About Me</h1>
-        <span class="text-gray">My personal details and acheivements</span>
-        <div class="container">
-          <div class="boxLeft">
-            <ul>
-              <li><b>Email</b>:hammikaakshaya04@gmail.com</li>
-              <li><b>Degree</b>:B.Tech in Computer Science</li>
-              <li><b>Location</b>:Hyderabad</li>
-            </ul>
-          </div>
-          <div class="boxRight">
-            <p>
-              I aim to become a successful expert in the field of Software
-              Engineering by channelizing my technical knowledge and skills to
-              ensure personal and professional growth and to contribute to the
-              prosperity of the organization. Through continuous learning and
-              collaboration, I strive to distinguish myself from others.
-            </p>
-          </div>
-        </div>
-      </section>
+  <h1>About Me</h1>
+  <span class="text-gray">My personal details and achievements</span>
+  <div class="container">
+    <div class="boxLeft">
+      <ul>
+        <li><b>Email</b>: hammikaakshaya04@gmail.com</li>
+        <li><b>Degree</b>: B.Tech in Computer Science</li>
+        <li><b>Location</b>: Hyderabad</li>
+      </ul>
+    </div>
+    <div class="boxRight">
+      <p>
+        I aim to become a successful expert in the field of Software
+        Engineering by channelizing my technical knowledge and skills to
+        ensure personal and professional growth and to contribute to the
+        prosperity of the organization. Through continuous learning and
+        collaboration, I strive to distinguish myself from others.
+      </p>
+    </div>
+  </div>
+  
+  <!-- Compact Certifications Card -->
+  <div class="single-certification-card">
+    <h3><i class="fas fa-certificate"></i> My Achievements</h3>
+    <ul class="certification-list">
+      <li>Completed an internship in Salesforce Developer Virtual Internship gaining hands on experience in saleforce fundamentals and technologies.</li>
+      <li>IBM SkillsBuild and CSRBOX Academic Internship on Data Analytics and Frond-end Web Development.</li>
+      <li> Successfully published 2 research papers as a main lead in the team named “Ensuring Automobile Safety by Improved Ignition Locking System through Blood Alcohol Content Measurement and IoT” (07/2023 ‐10/2023) and “Fake Review 
+Identification Using Hybrid Fusion of Machine Learning and Natural Language Processing Techniques” (08/2024-11/2024) in an IEEE conference, 2024, demonstrating my determination and passion for my work.</li>
+      <li>Worked on two real world problem,"CNN Driven Classification of Anterior Talofibular Ligament in T2 axial MRI Scans" and "Deep learning enhanced DDOS Detection and Mitigation in Cloud Environements".</li>
+      <li>Completed a certificatio in Google Cloud career readiness Associate Cloud Engineer track from Google.</li>
+    </ul>
+  </div>
+</section>
       <hr />
       <section class="thirdSection" id="education">
         <h1>Education</h1>
@@ -588,7 +627,7 @@ html {
             </div>
             <div class="vertical-desc">
               BTech :<b> Computer Science </b>
-              <div>CGPA :<b> 9.05 </b></div>
+              <div>CGPA :<b> 9.1 </b></div>
             </div>
           </div>
         </div>
@@ -731,5 +770,88 @@ html {
         typeSpeed: 50,
       });
     </script>
+    <script>
+  // List of reliable quote APIs (will try each in order)
+  const quoteAPIs = [
+    'https://api.quotable.io/random',
+    'https://type.fit/api/quotes',
+    'https://zenquotes.io/api/random'
+  ];
+  
+  let currentApiIndex = 0;
+  let quoteInterval;
+
+  async function fetchQuote() {
+    const quoteText = document.getElementById('quote-text');
+    const quoteAuthor = document.getElementById('quote-author');
+    
+    try {
+      // Try current API first
+      const response = await fetch(quoteAPIs[currentApiIndex]);
+      
+      if (!response.ok) throw new Error('API failed');
+      
+      const data = await response.json();
+      
+      // Different APIs return different formats - handle all cases
+      let quote, author;
+      
+      if (quoteAPIs[currentApiIndex].includes('quotable.io')) {
+        quote = data.content;
+        author = data.author;
+      } 
+      else if (quoteAPIs[currentApiIndex].includes('type.fit')) {
+        const randomQuote = data[Math.floor(Math.random() * data.length)];
+        quote = randomQuote.text;
+        author = randomQuote.author || "Unknown";
+      }
+      else if (quoteAPIs[currentApiIndex].includes('zenquotes')) {
+        quote = data[0].q;
+        author = data[0].a;
+      }
+      
+      // Apply fade effect
+      quoteText.style.opacity = 0;
+      quoteAuthor.style.opacity = 0;
+      
+      setTimeout(() => {
+        quoteText.textContent = `"${quote}"`;
+        quoteAuthor.textContent = `— ${author}`;
+        quoteText.style.opacity = 1;
+        quoteAuthor.style.opacity = 1;
+      }, 500);
+      
+      return true;
+      
+    } catch (error) {
+      console.error(`Error with API ${currentApiIndex}:`, error);
+      
+      // Try next API in the list
+      currentApiIndex = (currentApiIndex + 1) % quoteAPIs.length;
+      
+      if (currentApiIndex === 0) {
+        // All APIs failed, use fallback
+        quoteText.textContent = '"The only way to do great work is to love what you do."';
+        quoteAuthor.textContent = '— Steve Jobs';
+        return false;
+      }
+      
+      // Retry immediately with next API
+      return fetchQuote();
+    }
+  }
+
+  // Initial fetch when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    fetchQuote();
+    // Refresh every 30 seconds
+    quoteInterval = setInterval(fetchQuote, 10000);
+  });
+
+  // Clean up when leaving page
+  window.addEventListener('beforeunload', () => {
+    clearInterval(quoteInterval);
+  });
+</script>
   </body>
 </html>
